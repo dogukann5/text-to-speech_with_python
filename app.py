@@ -17,7 +17,7 @@ def preview():
     mp3_fp = BytesIO()
     tts.save(mp3_fp)
     mp3_fp.seek(0)
-    return send_file(mp3_fp, mimetype='audio/mp3')
+    return send_file(mp3_fp, mimetype='audio/mpeg', as_attachment=False, attachment_filename='preview.mp3')
 
 @app.route('/download', methods=['POST'])
 def download():
