@@ -15,7 +15,7 @@
         <input type="submit" value="Preview">
     </form>
     <br>
-    <audio id="audio" controls style="display: none;"></audio>
+    <audio id="audio" controls style="display: block;"></audio>
     <script>
         var form = document.getElementById('textForm');
         var audio = document.getElementById('audio');
@@ -33,9 +33,8 @@
             .then(response => response.blob())
             .then(blob => {
                 var audioURL = URL.createObjectURL(blob);
-                audio.src = audioURL;
-                audio.style.display = 'block';
-                audio.play();
+                audio.src = audioURL; 
+                audio.play(); 
             });
         });
     </script>
