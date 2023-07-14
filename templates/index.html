@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>gTTS Example</h1>
-    <form action="/preview" method="post">
+    <form id="textForm">
         <textarea id="text" name="text" rows="5" cols="50"></textarea><br>
         <select id="language" name="language">
             {% for code, name in languages.items() %}
@@ -17,7 +17,7 @@
     <br>
     <audio id="audio" controls style="display: none;"></audio>
     <script>
-        var form = document.querySelector('form');
+        var form = document.getElementById('textForm');
         var audio = document.getElementById('audio');
         form.addEventListener('submit', function(e) {
             e.preventDefault();
