@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from gtts import gTTS, lang
 from io import BytesIO
 
@@ -17,7 +17,7 @@ def preview():
     mp3_fp = BytesIO()
     tts.save(mp3_fp)
     mp3_fp.seek(0)
-    return mp3_fp.read()
+    return send_file(mp3_fp, as_attachment=True)
 
 if __name__ == '__main__':
     app.run()
