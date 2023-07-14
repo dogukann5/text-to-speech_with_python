@@ -7,6 +7,11 @@
     <h1>gTTS Example</h1>
     <form action="/download" method="post">
         <textarea name="text" rows="5" cols="50"></textarea><br>
+        <select name="language">
+            {% for code, name in languages.items() %}
+                <option value="{{ code }}">{{ name }}</option>
+            {% endfor %}
+        </select><br>
         <input type="submit" value="Download">
     </form>
 </body>
